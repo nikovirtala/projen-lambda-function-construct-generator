@@ -15,14 +15,15 @@ const project = new cdk.JsiiProject({
         },
     },
     devDeps: [
+        "@mrgrain/cdk-esbuild",
         "@nikovirtala/projen-vitest",
-        "esbuild",
-        "glob",
-        "yargs",
         "@types/glob",
         "@types/yargs",
-        "tsx",
         "change-case",
+        "esbuild",
+        "glob",
+        "tsx",
+        "yargs",
     ],
     autoApproveOptions: {
         secret: "GITHUB_TOKEN",
@@ -36,7 +37,7 @@ const project = new cdk.JsiiProject({
     npmAccess: javascript.NpmAccess.PUBLIC,
     packageManager: javascript.NodePackageManager.PNPM,
     packageName: "@nikovirtala/projen-lambda-function-construct-generator",
-    peerDeps: ["aws-cdk-lib", "constructs", "projen"],
+    peerDeps: ["aws-cdk-lib", "constructs", "projen", "@mrgrain/cdk-esbuild"],
     pnpmVersion: "10",
     prettier: true,
     prettierOptions: {

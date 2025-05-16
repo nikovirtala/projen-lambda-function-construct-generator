@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@mrgrain/cdk-esbuild",
+      "type": "build"
+    },
+    {
       "name": "@nikovirtala/projen-vitest",
       "type": "build"
     },
@@ -127,6 +131,10 @@
       "name": "@vitest/coverage-v8",
       "version": "^3",
       "type": "devenv"
+    },
+    {
+      "name": "@mrgrain/cdk-esbuild",
+      "type": "peer"
     },
     {
       "name": "aws-cdk-lib",

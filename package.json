@@ -36,6 +36,7 @@
     "organization": false
   },
   "devDependencies": {
+    "@mrgrain/cdk-esbuild": "^5.4.1",
     "@nikovirtala/projen-vitest": "^2.0.24",
     "@types/glob": "^8.1.0",
     "@types/node": "ts5.8",
@@ -67,6 +68,7 @@
     "yargs": "^17.7.2"
   },
   "peerDependencies": {
+    "@mrgrain/cdk-esbuild": "^5.4.1",
     "aws-cdk-lib": "^2.195.0",
     "constructs": "^10.4.2",
     "projen": "^0.92.4"

@@ -147,6 +147,9 @@ Test whether the given construct is a component.
 | <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.filePattern">filePattern</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.outputDir">outputDir</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.sourceDir">sourceDir</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.baseConstructClass">baseConstructClass</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.baseConstructImport">baseConstructImport</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.baseConstructPackage">baseConstructPackage</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -212,6 +215,36 @@ public readonly sourceDir: string;
 
 ---
 
+##### `baseConstructClass`<sup>Optional</sup> <a name="baseConstructClass" id="@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.baseConstructClass"></a>
+
+```typescript
+public readonly baseConstructClass: string;
+```
+
+- *Type:* string
+
+---
+
+##### `baseConstructImport`<sup>Optional</sup> <a name="baseConstructImport" id="@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.baseConstructImport"></a>
+
+```typescript
+public readonly baseConstructImport: string;
+```
+
+- *Type:* string
+
+---
+
+##### `baseConstructPackage`<sup>Optional</sup> <a name="baseConstructPackage" id="@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGenerator.property.baseConstructPackage"></a>
+
+```typescript
+public readonly baseConstructPackage: string;
+```
+
+- *Type:* string
+
+---
+
 
 ## Structs <a name="Structs" id="Structs"></a>
 
@@ -232,6 +265,9 @@ const lambdaFunctionConstructGeneratorOptions: LambdaFunctionConstructGeneratorO
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.addDependencies">addDependencies</a></code> | <code>boolean</code> | Whether to automatically add the required dependencies. |
+| <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.baseConstructClass">baseConstructClass</a></code> | <code>string</code> | Name of the construct class to extend. |
+| <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.baseConstructImport">baseConstructImport</a></code> | <code>string</code> | Import statement for the base construct. |
+| <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.baseConstructPackage">baseConstructPackage</a></code> | <code>string</code> | Package name to add as dependency for the base construct. |
 | <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.esbuildOptions">esbuildOptions</a></code> | <code>@mrgrain/cdk-esbuild.BuildOptions</code> | esbuild options to customize the bundling process. |
 | <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.filePattern">filePattern</a></code> | <code>string</code> | File pattern to identify Lambda Function handlers. |
 | <code><a href="#@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.outputDir">outputDir</a></code> | <code>string</code> | Output directory where Lambda Function constructs will be generated. |
@@ -251,6 +287,66 @@ public readonly addDependencies: boolean;
 Whether to automatically add the required dependencies.
 
 ---
+
+##### `baseConstructClass`<sup>Optional</sup> <a name="baseConstructClass" id="@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.baseConstructClass"></a>
+
+```typescript
+public readonly baseConstructClass: string;
+```
+
+- *Type:* string
+- *Default:* "aws_lambda.Function"
+
+Name of the construct class to extend.
+
+---
+
+*Example*
+
+```typescript
+"NodejsFunction"
+```
+
+
+##### `baseConstructImport`<sup>Optional</sup> <a name="baseConstructImport" id="@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.baseConstructImport"></a>
+
+```typescript
+public readonly baseConstructImport: string;
+```
+
+- *Type:* string
+- *Default:* "import { aws_lambda } from 'aws-cdk-lib';"
+
+Import statement for the base construct.
+
+---
+
+*Example*
+
+```typescript
+"import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';"
+```
+
+
+##### `baseConstructPackage`<sup>Optional</sup> <a name="baseConstructPackage" id="@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.baseConstructPackage"></a>
+
+```typescript
+public readonly baseConstructPackage: string;
+```
+
+- *Type:* string
+- *Default:* "aws-cdk-lib"
+
+Package name to add as dependency for the base construct.
+
+---
+
+*Example*
+
+```typescript
+"aws-cdk-lib"
+```
+
 
 ##### `esbuildOptions`<sup>Optional</sup> <a name="esbuildOptions" id="@nikovirtala/projen-lambda-function-construct-generator.LambdaFunctionConstructGeneratorOptions.property.esbuildOptions"></a>
 

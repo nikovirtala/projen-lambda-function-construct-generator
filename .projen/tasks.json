@@ -282,13 +282,13 @@
       },
       "steps": [
         {
-          "exec": "pnpm dlx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@nikovirtala/projen-vitest,@types/glob,@types/yargs,change-case,esbuild,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,glob,jsii-diff,jsii-pacmak,prettier,projen,ts-node,tsx,yargs,aws-cdk-lib,constructs,@mrgrain/cdk-esbuild"
+          "exec": "pnpm dlx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@mrgrain/cdk-esbuild,@nikovirtala/projen-vitest,@types/glob,@types/yargs,change-case,esbuild,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,glob,jsii-diff,jsii-pacmak,prettier,projen,ts-node,tsx,yargs,aws-cdk-lib,constructs"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @nikovirtala/projen-vitest @types/glob @types/node @types/yargs @typescript-eslint/eslint-plugin @typescript-eslint/parser change-case commit-and-tag-version constructs esbuild eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint glob jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii prettier projen ts-node tsx typescript vitest yargs @vitest/coverage-v8 aws-cdk-lib @mrgrain/cdk-esbuild"
+          "exec": "pnpm update @mrgrain/cdk-esbuild @nikovirtala/projen-vitest @types/glob @types/node @types/yargs @typescript-eslint/eslint-plugin @typescript-eslint/parser change-case commit-and-tag-version constructs esbuild eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint glob jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii prettier projen ts-node tsx typescript vitest yargs @vitest/coverage-v8 aws-cdk-lib"
         },
         {
           "exec": "npx projen"

@@ -63,18 +63,26 @@ describe("LambdaFunctionConstructGenerator", () => {
     });
 
     it("should create bundle task", () => {
-        new LambdaFunctionConstructGenerator(project);
+        const generator = new LambdaFunctionConstructGenerator(project);
 
-        const bundleTask = project.tasks.tryFind("generate-and-bundle");
+        // Get the unique task name based on default values
+        const uniqueId = "src-handlers-lambda-ts";
+        const taskName = `generate-and-bundle-${uniqueId}`;
+
+        const bundleTask = project.tasks.tryFind(taskName);
         expect(bundleTask).toBeDefined();
-        expect(bundleTask?.description).toBe("Bundle Lambda Functions using esbuild");
+        expect(bundleTask?.description).toContain("Generate Lambda Function Constructs from src/handlers/*.lambda.ts");
     });
 
     it("should add bundle task to compile workflow", () => {
         new LambdaFunctionConstructGenerator(project);
 
+        // Get the unique task name based on default values
+        const uniqueId = "src-handlers-lambda-ts";
+        const taskName = `generate-and-bundle-${uniqueId}`;
+
         // Mock the compile task and bundle task
-        const bundleTask = project.tasks.tryFind("generate-and-bundle");
+        const bundleTask = project.tasks.tryFind(taskName);
         const compileTask = project.tasks.tryFind("compile");
 
         // Just check if both tasks exist
