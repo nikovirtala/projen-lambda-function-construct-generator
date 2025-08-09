@@ -36,8 +36,8 @@
     "organization": false
   },
   "devDependencies": {
-    "@mrgrain/cdk-esbuild": "^5.5.5",
-    "@nikovirtala/projen-vitest": "^2.0.70",
+    "@mrgrain/cdk-esbuild": "^5.5.6",
+    "@nikovirtala/projen-vitest": "^2.0.74",
     "@types/glob": "^8.1.0",
     "@types/node": "ts5.8",
     "@types/yargs": "^17.0.33",
@@ -52,15 +52,15 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-plugin-prettier": "^5.5.4",
     "glob": "^10.4.5",
     "jsii": "~5.8.3",
-    "jsii-diff": "^1.112.0",
+    "jsii-diff": "^1.113.0",
     "jsii-docgen": "^10.5.0",
-    "jsii-pacmak": "^1.112.0",
+    "jsii-pacmak": "^1.113.0",
     "jsii-rosetta": "~5.8.3",
     "prettier": "^3.6.2",
-    "projen": "^0.95.0",
+    "projen": "^0.95.2",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
     "typescript": "5.8.3",
@@ -68,16 +68,16 @@
     "yargs": "^17.7.2"
   },
   "peerDependencies": {
-    "@mrgrain/cdk-esbuild": "^5.5.5",
-    "aws-cdk-lib": "^2.208.0",
+    "@mrgrain/cdk-esbuild": "^5.5.6",
+    "aws-cdk-lib": "^2.210.0",
     "constructs": "^10.4.2",
-    "projen": "^0.95.0"
+    "projen": "^0.95.2"
   },
   "dependencies": {
-    "@mrgrain/cdk-esbuild": "^5.5.5",
-    "aws-cdk-lib": "^2.208.0",
+    "@mrgrain/cdk-esbuild": "^5.5.6",
+    "aws-cdk-lib": "^2.210.0",
     "constructs": "^10.4.2",
-    "projen": "^0.95.0"
+    "projen": "^0.95.2"
   },
   "pnpm": {},
   "main": "lib/index.js",
