@@ -1,5 +1,15 @@
 {
   "tasks": {
+    "biome": {
+      "name": "biome",
+      "description": "Runs Biome against the codebase",
+      "steps": [
+        {
+          "exec": "biome check --no-errors-on-unmatched --write",
+          "receiveArgs": true
+        }
+      ]
+    },
     "build": {
       "name": "build",
       "description": "Full release build",
@@ -122,20 +132,6 @@
         }
       ]
     },
-    "eslint": {
-      "name": "eslint",
-      "description": "Runs eslint against the codebase",
-      "env": {
-        "ESLINT_USE_FLAT_CONFIG": "false",
-        "NODE_NO_WARNINGS": "1"
-      },
-      "steps": [
-        {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
-          "receiveArgs": true
-        }
-      ]
-    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
@@ -232,7 +228,7 @@
       "description": "Run tests",
       "steps": [
         {
-          "spawn": "eslint"
+          "spawn": "biome"
         },
         {
           "exec": "vitest run",
@@ -283,13 +279,13 @@
       },
       "steps": [
         {
-          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@mrgrain/cdk-esbuild,@nikovirtala/projen-vitest,@types/glob,@types/yargs,change-case,esbuild,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,glob,jsii-diff,jsii-pacmak,prettier,projen,ts-node,tsx,yargs,aws-cdk-lib,constructs"
+          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@mrgrain/cdk-esbuild,@nikovirtala/projen-vitest,@types/glob,@types/yargs,change-case,esbuild,glob,jsii-diff,jsii-pacmak,projen,ts-node,tsx,yargs,aws-cdk-lib,constructs"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @mrgrain/cdk-esbuild @nikovirtala/projen-vitest @types/glob @types/node @types/yargs @typescript-eslint/eslint-plugin @typescript-eslint/parser change-case commit-and-tag-version constructs esbuild eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint glob jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii prettier projen ts-node tsx typescript vitest yargs @vitest/coverage-v8 aws-cdk-lib"
+          "exec": "pnpm update @biomejs/biome @mrgrain/cdk-esbuild @nikovirtala/projen-vitest @types/glob @types/node @types/yargs change-case commit-and-tag-version constructs esbuild glob jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen ts-node tsx typescript vitest yargs @vitest/coverage-v8 aws-cdk-lib"
         },
         {
           "exec": "npx projen"

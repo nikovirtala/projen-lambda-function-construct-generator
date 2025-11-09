@@ -1,73 +1,73 @@
-import * as path from "path";
-import { BuildOptions } from "@mrgrain/cdk-esbuild";
+import * as path from "node:path";
+import type { BuildOptions } from "@mrgrain/cdk-esbuild";
 import { Component, SourceCode } from "projen";
-import { NodeProject } from "projen/lib/javascript";
+import type { NodeProject } from "projen/lib/javascript";
 
 /**
  * Options for the LambdaFunctionConstructGenerator
  */
 export interface LambdaFunctionConstructGeneratorOptions {
-    /**
-     * Source directory where Lambda Function handlers are located
-     *
-     * @default "src/handlers"
-     */
-    readonly sourceDir?: string;
+	/**
+	 * Source directory where Lambda Function handlers are located
+	 *
+	 * @default "src/handlers"
+	 */
+	readonly sourceDir?: string;
 
-    /**
-     * Output directory where Lambda Function constructs will be generated
-     *
-     * @default "src/constructs/lambda"
-     */
-    readonly outputDir?: string;
+	/**
+	 * Output directory where Lambda Function constructs will be generated
+	 *
+	 * @default "src/constructs/lambda"
+	 */
+	readonly outputDir?: string;
 
-    /**
-     * File pattern to identify Lambda Function handlers
-     *
-     * @default "*.lambda.ts"
-     */
-    readonly filePattern?: string;
+	/**
+	 * File pattern to identify Lambda Function handlers
+	 *
+	 * @default "*.lambda.ts"
+	 */
+	readonly filePattern?: string;
 
-    /**
-     * esbuild options to customize the bundling process
-     *
-     * @default {}
-     */
-    readonly esbuildOptions?: BuildOptions;
+	/**
+	 * esbuild options to customize the bundling process
+	 *
+	 * @default {}
+	 */
+	readonly esbuildOptions?: BuildOptions;
 
-    /**
-     * Whether to automatically add the required dependencies
-     *
-     * @default true
-     */
-    readonly addDependencies?: boolean;
+	/**
+	 * Whether to automatically add the required dependencies
+	 *
+	 * @default true
+	 */
+	readonly addDependencies?: boolean;
 
-    /**
-     * Import statement for the base construct
-     *
-     * @example "import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';"
-     *
-     * @default "import { aws_lambda } from 'aws-cdk-lib';"
-     */
-    readonly baseConstructImport?: string;
+	/**
+	 * Import statement for the base construct
+	 *
+	 * @example "import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';"
+	 *
+	 * @default "import { aws_lambda } from 'aws-cdk-lib';"
+	 */
+	readonly baseConstructImport?: string;
 
-    /**
-     * Name of the construct class to extend
-     *
-     * @example "NodejsFunction"
-     *
-     * @default "aws_lambda.Function"
-     */
-    readonly baseConstructClass?: string;
+	/**
+	 * Name of the construct class to extend
+	 *
+	 * @example "NodejsFunction"
+	 *
+	 * @default "aws_lambda.Function"
+	 */
+	readonly baseConstructClass?: string;
 
-    /**
-     * Package name to add as dependency for the base construct
-     *
-     * @example "aws-cdk-lib"
-     *
-     * @default "aws-cdk-lib"
-     */
-    readonly baseConstructPackage?: string;
+	/**
+	 * Package name to add as dependency for the base construct
+	 *
+	 * @example "aws-cdk-lib"
+	 *
+	 * @default "aws-cdk-lib"
+	 */
+	readonly baseConstructPackage?: string;
 }
 
 /**
@@ -76,98 +76,110 @@ export interface LambdaFunctionConstructGeneratorOptions {
  * The bundling happens during projen execution, not during CDK synth, enabling a "build once, deploy many" pattern.
  */
 export class LambdaFunctionConstructGenerator extends Component {
-    public readonly sourceDir: string;
-    public readonly outputDir: string;
-    public readonly filePattern: string;
-    public readonly esbuildOptions: BuildOptions;
-    public readonly baseConstructImport?: string;
-    public readonly baseConstructClass?: string;
-    public readonly baseConstructPackage?: string;
-    private readonly nodeProject: NodeProject;
-    private readonly bundlerScriptPath: string;
+	public readonly sourceDir: string;
+	public readonly outputDir: string;
+	public readonly filePattern: string;
+	public readonly esbuildOptions: BuildOptions;
+	public readonly baseConstructImport?: string;
+	public readonly baseConstructClass?: string;
+	public readonly baseConstructPackage?: string;
+	private readonly nodeProject: NodeProject;
+	private readonly bundlerScriptPath: string;
 
-    constructor(project: NodeProject, options?: LambdaFunctionConstructGeneratorOptions) {
-        super(project);
-        this.nodeProject = project;
-        this.sourceDir = options?.sourceDir ?? "src/handlers";
-        this.outputDir = options?.outputDir ?? "src/constructs/lambda";
-        this.filePattern = options?.filePattern ?? "*.lambda.ts";
-        this.esbuildOptions = options?.esbuildOptions ?? {};
-        this.baseConstructImport = options?.baseConstructImport;
-        this.baseConstructClass = options?.baseConstructClass;
-        this.baseConstructPackage = options?.baseConstructPackage;
+	constructor(
+		project: NodeProject,
+		options?: LambdaFunctionConstructGeneratorOptions,
+	) {
+		super(project);
+		this.nodeProject = project;
+		this.sourceDir = options?.sourceDir ?? "src/handlers";
+		this.outputDir = options?.outputDir ?? "src/constructs/lambda";
+		this.filePattern = options?.filePattern ?? "*.lambda.ts";
+		this.esbuildOptions = options?.esbuildOptions ?? {};
+		this.baseConstructImport = options?.baseConstructImport;
+		this.baseConstructClass = options?.baseConstructClass;
+		this.baseConstructPackage = options?.baseConstructPackage;
 
-        // Create unique script name based on sourceDir and filePattern
-        const uniqueId = this.createUniqueId(this.sourceDir, this.filePattern);
-        this.bundlerScriptPath = path.join(".projen", `generate-and-bundle-${uniqueId}.ts`);
+		// Create unique script name based on sourceDir and filePattern
+		const uniqueId = this.createUniqueId(this.sourceDir, this.filePattern);
+		this.bundlerScriptPath = path.join(
+			".projen",
+			`generate-and-bundle-${uniqueId}.ts`,
+		);
 
-        // Add required dependencies
-        if (options?.addDependencies ?? true) {
-            this.addDependencies(options?.baseConstructPackage);
-        }
+		// Add required dependencies
+		if (options?.addDependencies ?? true) {
+			this.addDependencies(options?.baseConstructPackage);
+		}
 
-        // Create the bundle task
-        this.createBundleTask();
+		// Create the bundle task
+		this.createBundleTask();
 
-        // Add the bundle task to the build workflow
-        this.addBundleTaskToWorkflow();
-    }
+		// Add the bundle task to the build workflow
+		this.addBundleTaskToWorkflow();
+	}
 
-    /**
-     * Add required dependencies for the component
-     */
-    private addDependencies(additionalPackage?: string) {
-        this.nodeProject.addDeps("aws-cdk-lib", "constructs");
+	/**
+	 * Add required dependencies for the component
+	 */
+	private addDependencies(additionalPackage?: string) {
+		this.nodeProject.addDeps("aws-cdk-lib", "constructs");
 
-        if (additionalPackage && additionalPackage !== "aws-cdk-lib" && additionalPackage !== "constructs") {
-            this.nodeProject.addDeps(additionalPackage);
-        }
-    }
+		if (
+			additionalPackage &&
+			additionalPackage !== "aws-cdk-lib" &&
+			additionalPackage !== "constructs"
+		) {
+			this.nodeProject.addDeps(additionalPackage);
+		}
+	}
 
-    /**
-     * Create a unique ID based on sourceDir and filePattern
-     */
-    private createUniqueId(sourceDir: string, filePattern: string): string {
-        // Remove special characters and convert to kebab case
-        const dirPart = sourceDir.replace(/\//g, "-").replace(/[^\w-]/g, "");
-        const patternPart = filePattern
-            .replace(/\*/g, "")
-            .replace(/\./g, "-")
-            .replace(/[^\w-]/g, "");
-        return `${dirPart}-${patternPart}`.replace(/--+/g, "-").replace(/^-|-$/g, "");
-    }
+	/**
+	 * Create a unique ID based on sourceDir and filePattern
+	 */
+	private createUniqueId(sourceDir: string, filePattern: string): string {
+		// Remove special characters and convert to kebab case
+		const dirPart = sourceDir.replace(/\//g, "-").replace(/[^\w-]/g, "");
+		const patternPart = filePattern
+			.replace(/\*/g, "")
+			.replace(/\./g, "-")
+			.replace(/[^\w-]/g, "");
+		return `${dirPart}-${patternPart}`
+			.replace(/--+/g, "-")
+			.replace(/^-|-$/g, "");
+	}
 
-    /**
-     * Create the bundle task that will be executed during projen build
-     */
-    private createBundleTask() {
-        const uniqueId = this.createUniqueId(this.sourceDir, this.filePattern);
-        const taskName = `generate-and-bundle-${uniqueId}`;
+	/**
+	 * Create the bundle task that will be executed during projen build
+	 */
+	private createBundleTask() {
+		const uniqueId = this.createUniqueId(this.sourceDir, this.filePattern);
+		const taskName = `generate-and-bundle-${uniqueId}`;
 
-        let baseConstructArgs = "";
-        if (this.baseConstructImport) {
-            baseConstructArgs += ` --base-construct-import '${this.baseConstructImport}'`;
-        }
-        if (this.baseConstructClass) {
-            baseConstructArgs += ` --base-construct-class '${this.baseConstructClass}'`;
-        }
+		let baseConstructArgs = "";
+		if (this.baseConstructImport) {
+			baseConstructArgs += ` --base-construct-import '${this.baseConstructImport}'`;
+		}
+		if (this.baseConstructClass) {
+			baseConstructArgs += ` --base-construct-class '${this.baseConstructClass}'`;
+		}
 
-        const bundleTask = this.nodeProject.addTask(taskName, {
-            description: `Generate Lambda Function Constructs from ${this.sourceDir}/${this.filePattern} and bundle their handlers`,
-            exec: `tsx --tsconfig tsconfig.dev.json ${this.bundlerScriptPath} --source-dir ${this.sourceDir} --output-dir ${this.outputDir} --file-pattern "${this.filePattern}" --esbuild-options '${JSON.stringify(this.esbuildOptions)}'${baseConstructArgs}`,
-        });
+		const bundleTask = this.nodeProject.addTask(taskName, {
+			description: `Generate Lambda Function Constructs from ${this.sourceDir}/${this.filePattern} and bundle their handlers`,
+			exec: `tsx --tsconfig tsconfig.dev.json ${this.bundlerScriptPath} --source-dir ${this.sourceDir} --output-dir ${this.outputDir} --file-pattern "${this.filePattern}" --esbuild-options '${JSON.stringify(this.esbuildOptions)}'${baseConstructArgs}`,
+		});
 
-        // Create the bundler script
-        this.createBundlerScript();
+		// Create the bundler script
+		this.createBundlerScript();
 
-        return bundleTask;
-    }
+		return bundleTask;
+	}
 
-    /**
-     * Create the bundler script that will be executed by the bundle task
-     */
-    private createBundlerScript() {
-        const bundlerScript = `// ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
+	/**
+	 * Create the bundler script that will be executed by the bundle task
+	 */
+	private createBundlerScript() {
+		const bundlerScript = `// ~~ Generated by projen. To modify, edit .projenrc.ts and run "npx projen".
 
 import * as path from 'path';
 import * as fs from 'fs';
@@ -302,32 +314,40 @@ main().catch(error => {
 });
 `;
 
-        // Create source code file and add code lines to it
-        const src = new SourceCode(this.project, this.bundlerScriptPath);
-        const lines = bundlerScript.split("\n");
-        for (const line of lines) {
-            src.line(line);
-        }
+		// Create source code file and add code lines to it
+		const src = new SourceCode(this.project, this.bundlerScriptPath);
+		const lines = bundlerScript.split("\n");
+		for (const line of lines) {
+			src.line(line);
+		}
 
-        // Add the dependencies needed for the bundler script
-        this.nodeProject.addDevDeps("esbuild", "glob", "yargs", "@types/glob", "@types/yargs", "tsx", "change-case");
-    }
+		// Add the dependencies needed for the bundler script
+		this.nodeProject.addDevDeps(
+			"esbuild",
+			"glob",
+			"yargs",
+			"@types/glob",
+			"@types/yargs",
+			"tsx",
+			"change-case",
+		);
+	}
 
-    /**
-     * Add the bundle task to the build workflow
-     */
-    private addBundleTaskToWorkflow() {
-        // Get the compile task
-        const compileTask = this.nodeProject.tasks.tryFind("compile");
+	/**
+	 * Add the bundle task to the build workflow
+	 */
+	private addBundleTaskToWorkflow() {
+		// Get the compile task
+		const compileTask = this.nodeProject.tasks.tryFind("compile");
 
-        if (compileTask) {
-            // Add the bundle task as a dependency of the compile task
-            const uniqueId = this.createUniqueId(this.sourceDir, this.filePattern);
-            const taskName = `generate-and-bundle-${uniqueId}`;
-            const bundleTask = this.nodeProject.tasks.tryFind(taskName);
-            if (bundleTask) {
-                compileTask.prependSpawn(bundleTask);
-            }
-        }
-    }
+		if (compileTask) {
+			// Add the bundle task as a dependency of the compile task
+			const uniqueId = this.createUniqueId(this.sourceDir, this.filePattern);
+			const taskName = `generate-and-bundle-${uniqueId}`;
+			const bundleTask = this.nodeProject.tasks.tryFind(taskName);
+			if (bundleTask) {
+				compileTask.prependSpawn(bundleTask);
+			}
+		}
+	}
 }
