@@ -22,6 +22,9 @@ tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
 /coverage/
+biome.jsonc
+mise.toml
+vitest.config.ts
 /.gitattributes
 /.projenrc.ts
 /projenrc

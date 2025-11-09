@@ -14,7 +14,7 @@
     },
     {
       "name": "@types/node",
-      "version": "ts5.8",
+      "version": "ts5.9",
       "type": "build"
     },
     {
@@ -89,12 +89,12 @@
     },
     {
       "name": "jsii-rosetta",
-      "version": "~5.8.3",
+      "version": "~5.9.3",
       "type": "build"
     },
     {
       "name": "jsii",
-      "version": "~5.8.3",
+      "version": "~5.9.3",
       "type": "build"
     },
     {
@@ -115,12 +115,12 @@
     },
     {
       "name": "typescript",
-      "version": "5.8.3",
+      "version": "5.9.3",
       "type": "build"
     },
     {
       "name": "vitest",
-      "version": "^3",
+      "version": "^4",
       "type": "build"
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "name": "@vitest/coverage-v8",
-      "version": "^3",
+      "version": "^4",
       "type": "devenv"
     },
     {
