@@ -38,7 +38,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2",
     "@mrgrain/cdk-esbuild": "^5.7.3",
-    "@nikovirtala/projen-vitest": "^2.1.2",
+    "@nikovirtala/projen-vitest": "^2.1.4",
     "@types/glob": "^8.1.0",
     "@types/node": "ts5.9",
     "@types/yargs": "^17.0.34",
