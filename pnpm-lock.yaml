@@ -25,8 +25,8 @@ importers:
         specifier: ^2
         version: 2.3.5
       '@nikovirtala/projen-vitest':
-        specifier: ^2.1.4
-        version: 2.1.4(constructs@10.4.3)(projen@0.98.10(constructs@10.4.3))
+        specifier: ^2.1.5
+        version: 2.1.5(constructs@10.4.3)(projen@0.98.10(constructs@10.4.3))
       '@types/glob':
         specifier: ^8.1.0
         version: 8.1.0
@@ -568,8 +568,8 @@ packages:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.0.5
 
-  '@nikovirtala/projen-vitest@2.1.4':
-    resolution: {integrity: sha512-/4Uot66rcCL+wGfHCY/+g1q592CPsHWaB5lNdjht24yoAvI87RRTn7VceW6PV8N5TsiYtLvQfJf/4ue6qX/s+Q==}
+  '@nikovirtala/projen-vitest@2.1.5':
+    resolution: {integrity: sha512-M18dqDksjLTVjCUWn/FaRmu33wScfkLaIyYeT3ZsYmV1KMZi9+BMeMstI7ndedJekwySztI+QD5qEl09ECL4GA==}
     engines: {node: '>= 22.21.1'}
     peerDependencies:
       constructs: ^10.4.3
@@ -2591,7 +2591,7 @@ snapshots:
     optionalDependencies:
       esbuild: 0.25.12
 
-  '@nikovirtala/projen-vitest@2.1.4(constructs@10.4.3)(projen@0.98.10(constructs@10.4.3))':
+  '@nikovirtala/projen-vitest@2.1.5(constructs@10.4.3)(projen@0.98.10(constructs@10.4.3))':
     dependencies:
       constructs: 10.4.3
       projen: 0.98.10(constructs@10.4.3)
