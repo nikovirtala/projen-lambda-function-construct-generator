@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@mrgrain/cdk-esbuild':
-        specifier: ^5.7.3
-        version: 5.7.3(aws-cdk-lib@2.224.0(constructs@10.4.3))(constructs@10.4.3)
+        specifier: ^5.7.4
+        version: 5.7.4(aws-cdk-lib@2.224.0(constructs@10.4.3))(constructs@10.4.3)
       aws-cdk-lib:
         specifier: ^2.224.0
         version: 2.224.0(constructs@10.4.3)
@@ -25,8 +25,8 @@ importers:
         specifier: ^2
         version: 2.3.5
       '@nikovirtala/projen-vitest':
-        specifier: ^2.1.5
-        version: 2.1.5(constructs@10.4.3)(projen@0.98.11(constructs@10.4.3))
+        specifier: ^2.1.6
+        version: 2.1.6(constructs@10.4.3)(projen@0.98.11(constructs@10.4.3))
       '@types/glob':
         specifier: ^8.1.0
         version: 8.1.0
@@ -562,18 +562,18 @@ packages:
     resolution: {integrity: sha512-A542Rq4h+DkBivoYWYmo86j8fdmd5kzGNN+2K+MhKPbZ3mHYRN6HHa3fLKYPcbNyLRi1eT+n8LXaVjEBtDKEDQ==}
     engines: {node: '>= 14.17.0'}
 
-  '@mrgrain/cdk-esbuild@5.7.3':
-    resolution: {integrity: sha512-Vuo0lqOEB/BuwQURL3rR0K5047Jp/HKku6GlaIuq/gQDZbWeUiEgHCsSvI3qTgKHcpspWCoCZcjjn/umAxJg0A==}
+  '@mrgrain/cdk-esbuild@5.7.4':
+    resolution: {integrity: sha512-K8cqJt1CLgiMa2dtMPvgSnEhEuB32Xwjd99DnxSU9jdeRULqMxE9bc/qB4tyfIwWv6Wyb2b9Uu239LpRPv4PYg==}
     peerDependencies:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.0.5
 
-  '@nikovirtala/projen-vitest@2.1.5':
-    resolution: {integrity: sha512-M18dqDksjLTVjCUWn/FaRmu33wScfkLaIyYeT3ZsYmV1KMZi9+BMeMstI7ndedJekwySztI+QD5qEl09ECL4GA==}
+  '@nikovirtala/projen-vitest@2.1.6':
+    resolution: {integrity: sha512-pP2Qp2Is+RinVTvJ122B61N3PWPc+kt7Zz8kqJbF23X/qjktDwN5BU7pGz8CBet9JDxaf10MwoIrmM0cx98KYw==}
     engines: {node: '>= 22.21.1'}
     peerDependencies:
       constructs: ^10.4.3
-      projen: ^0.98.10
+      projen: ^0.98.11
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2588,14 +2588,14 @@ snapshots:
     dependencies:
       ajv: 8.17.1
 
-  '@mrgrain/cdk-esbuild@5.7.3(aws-cdk-lib@2.224.0(constructs@10.4.3))(constructs@10.4.3)':
+  '@mrgrain/cdk-esbuild@5.7.4(aws-cdk-lib@2.224.0(constructs@10.4.3))(constructs@10.4.3)':
     dependencies:
       aws-cdk-lib: 2.224.0(constructs@10.4.3)
       constructs: 10.4.3
     optionalDependencies:
       esbuild: 0.25.12
 
-  '@nikovirtala/projen-vitest@2.1.5(constructs@10.4.3)(projen@0.98.11(constructs@10.4.3))':
+  '@nikovirtala/projen-vitest@2.1.6(constructs@10.4.3)(projen@0.98.11(constructs@10.4.3))':
     dependencies:
       constructs: 10.4.3
       projen: 0.98.11(constructs@10.4.3)
