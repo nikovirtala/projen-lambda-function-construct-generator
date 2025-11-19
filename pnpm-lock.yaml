@@ -18,15 +18,15 @@ importers:
         specifier: ^10.4.3
         version: 10.4.3
       projen:
-        specifier: ^0.98.11
-        version: 0.98.11(constructs@10.4.3)
+        specifier: ^0.98.13
+        version: 0.98.13(constructs@10.4.3)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2
         version: 2.3.6
       '@nikovirtala/projen-vitest':
-        specifier: ^2.1.6
-        version: 2.1.6(constructs@10.4.3)(projen@0.98.11(constructs@10.4.3))
+        specifier: ^2.1.7
+        version: 2.1.7(constructs@10.4.3)(projen@0.98.13(constructs@10.4.3))
       '@types/glob':
         specifier: ^8.1.0
         version: 8.1.0
@@ -49,8 +49,8 @@ importers:
         specifier: ^0.27.0
         version: 0.27.0
       glob:
-        specifier: ^10.4.5
-        version: 10.4.5
+        specifier: ^10.5.0
+        version: 10.5.0
       jsii:
         specifier: ~5.9.3
         version: 5.9.14
@@ -560,8 +560,8 @@ packages:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.0.5
 
-  '@nikovirtala/projen-vitest@2.1.6':
-    resolution: {integrity: sha512-pP2Qp2Is+RinVTvJ122B61N3PWPc+kt7Zz8kqJbF23X/qjktDwN5BU7pGz8CBet9JDxaf10MwoIrmM0cx98KYw==}
+  '@nikovirtala/projen-vitest@2.1.7':
+    resolution: {integrity: sha512-/H9NAE49Cd1KedrTwU1YG6UGzxZuvJNN53AsZO26wF1BVshMybolb4TxhowcWf9hC5q8Q+d/Akwy9F/EwimHOw==}
     engines: {node: '>= 22.21.1'}
     peerDependencies:
       constructs: ^10.4.3
@@ -1300,8 +1300,8 @@ packages:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
 
-  glob@10.4.5:
-    resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
+  glob@10.5.0:
+    resolution: {integrity: sha512-DfXN8DfhJ7NH3Oe7cFmu3NCu1wKbkReJ8TorzSAFbSKrlNaQSKfIzqYqVY8zlbs2NLBbWpRiU52GX2PbaBVNkg==}
     hasBin: true
 
   gopd@1.2.0:
@@ -1755,8 +1755,8 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
-  projen@0.98.11:
-    resolution: {integrity: sha512-4dSJFxs7rm9p0bffXjcLQ3HSRyRNpFtFDoyqxYFodxwDJXoZrDVFDAXgOqDWRTVX73bLtOSd7cZB6HPBk7QEMA==}
+  projen@0.98.13:
+    resolution: {integrity: sha512-T6VfpFNS0v1QikOHJ0B6u1xZcX1+xyKXkwMRU4Wse6ePUexEw0oR0PF47JW0DGYE7MyWNSyvn5R9+Olbckh6rw==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2578,10 +2578,10 @@ snapshots:
     optionalDependencies:
       esbuild: 0.25.12
 
-  '@nikovirtala/projen-vitest@2.1.6(constructs@10.4.3)(projen@0.98.11(constructs@10.4.3))':
+  '@nikovirtala/projen-vitest@2.1.7(constructs@10.4.3)(projen@0.98.13(constructs@10.4.3))':
     dependencies:
       constructs: 10.4.3
-      projen: 0.98.11(constructs@10.4.3)
+      projen: 0.98.13(constructs@10.4.3)
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3337,7 +3337,7 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  glob@10.4.5:
+  glob@10.5.0:
     dependencies:
       foreground-child: 3.3.1
       jackspeak: 3.4.3
@@ -3836,7 +3836,7 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
-  projen@0.98.11(constructs@10.4.3):
+  projen@0.98.13(constructs@10.4.3):
     dependencies:
       constructs: 10.4.3
 
