@@ -18,15 +18,15 @@ importers:
         specifier: ^10.4.3
         version: 10.4.3
       projen:
-        specifier: ^0.98.17
-        version: 0.98.17(constructs@10.4.3)
+        specifier: ^0.98.18
+        version: 0.98.18(constructs@10.4.3)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2
         version: 2.3.7
       '@nikovirtala/projen-vitest':
-        specifier: ^2.1.10
-        version: 2.1.10(constructs@10.4.3)(projen@0.98.17(constructs@10.4.3))
+        specifier: ^2.1.11
+        version: 2.1.11(constructs@10.4.3)(projen@0.98.18(constructs@10.4.3))
       '@types/glob':
         specifier: ^8.1.0
         version: 8.1.0
@@ -560,8 +560,8 @@ packages:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.0.5
 
-  '@nikovirtala/projen-vitest@2.1.10':
-    resolution: {integrity: sha512-KTvL1Zc/xc8NWiFom5gIh9TGoguyXwKOgXYzJDVI3Y0UGcM+klKUk6qZW/nHZDYTkJ5+wsLGkUis+JG/ioqjkA==}
+  '@nikovirtala/projen-vitest@2.1.11':
+    resolution: {integrity: sha512-QmEtzN6d3vJ6mphvHSEFXYX178ntB1olYQ3Suqj2aqw4CAwEI5AJlXsJtgzBdVmThtDnb6kRaJaE94ucUwtmiw==}
     engines: {node: '>= 22.21.1'}
     peerDependencies:
       constructs: ^10.4.3
@@ -1755,8 +1755,8 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
-  projen@0.98.17:
-    resolution: {integrity: sha512-CGmaKHthN1un5j5NecihhLhlMFCqK7ztuNa4mFlgogUwI1MJzGV4MY4SUwcC8SVboJIpLsU7MpfC/MGGham4kw==}
+  projen@0.98.18:
+    resolution: {integrity: sha512-/xlU1y7tZwJzyhNLK9tofix+KsUpE0oNmacySb4/OhJnWzC/SEDsikoSfXEkDsjEdTOPaLMuMuF/mlyFa+/kbA==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2581,10 +2581,10 @@ snapshots:
     optionalDependencies:
       esbuild: 0.25.12
 
-  '@nikovirtala/projen-vitest@2.1.10(constructs@10.4.3)(projen@0.98.17(constructs@10.4.3))':
+  '@nikovirtala/projen-vitest@2.1.11(constructs@10.4.3)(projen@0.98.18(constructs@10.4.3))':
     dependencies:
       constructs: 10.4.3
-      projen: 0.98.17(constructs@10.4.3)
+      projen: 0.98.18(constructs@10.4.3)
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3839,7 +3839,7 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
-  projen@0.98.17(constructs@10.4.3):
+  projen@0.98.18(constructs@10.4.3):
     dependencies:
       constructs: 10.4.3
 
