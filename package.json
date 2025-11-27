@@ -38,7 +38,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2",
     "@mrgrain/cdk-esbuild": "^5.7.4",
-    "@nikovirtala/projen-vitest": "^2.1.14",
+    "@nikovirtala/projen-vitest": "^2.1.15",
     "@types/glob": "^8.1.0",
     "@types/node": "ts5.9",
     "@types/yargs": "^17.0.35",
@@ -53,7 +53,7 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.120.0",
     "jsii-rosetta": "~5.9.3",
-    "projen": "^0.98.25",
+    "projen": "^0.98.26",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
     "typescript": "5.9.3",
@@ -62,15 +62,15 @@
   },
   "peerDependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.4",
-    "aws-cdk-lib": "^2.229.1",
+    "aws-cdk-lib": "^2.230.0",
     "constructs": "^10.4.3",
-    "projen": "^0.98.25"
+    "projen": "^0.98.26"
   },
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.4",
-    "aws-cdk-lib": "^2.229.1",
+    "aws-cdk-lib": "^2.230.0",
     "constructs": "^10.4.3",
-    "projen": "^0.98.25"
+    "projen": "^0.98.26"
   },
   "pnpm": {},
   "main": "lib/index.js",
