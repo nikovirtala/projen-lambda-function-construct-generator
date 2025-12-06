@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@mrgrain/cdk-esbuild':
         specifier: ^5.7.5
-        version: 5.7.5(aws-cdk-lib@2.231.0(constructs@10.4.3))(constructs@10.4.3)
+        version: 5.7.5(aws-cdk-lib@2.232.0(constructs@10.4.3))(constructs@10.4.3)
       aws-cdk-lib:
-        specifier: ^2.231.0
-        version: 2.231.0(constructs@10.4.3)
+        specifier: ^2.232.0
+        version: 2.232.0(constructs@10.4.3)
       constructs:
         specifier: ^10.4.3
         version: 10.4.3
@@ -93,8 +93,8 @@ packages:
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0':
     resolution: {integrity: sha512-7bY3J8GCVxLupn/kNmpPc5VJz8grx+4RKfnnJiO1LG+uxkZfANZG3RMHhE+qQxxwkyQ9/MfPtTpf748UhR425A==}
 
-  '@aws-cdk/cloud-assembly-schema@48.18.0':
-    resolution: {integrity: sha512-KJHmkji59QboUIytK/imIY/ajt/r7OOXdyvZz25e0jssreyyxx9HUswZpcB0BM/9ZkVI7IdzYlotWe6opXdapg==}
+  '@aws-cdk/cloud-assembly-schema@48.20.0':
+    resolution: {integrity: sha512-+eeiav9LY4wbF/EFuCt/vfvi/Zoxo8bf94PW5clbMraChEliq83w4TbRVy0jB9jE0v1ooFTtIjSQkowSPkfISg==}
     engines: {node: '>= 18.0.0'}
     bundledDependencies:
       - jsonschema
@@ -844,8 +844,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  aws-cdk-lib@2.231.0:
-    resolution: {integrity: sha512-RMt88F1vhsM28j81EjvIXRoPeYQdtk72EGh9xAP6LjuyF8df1hDBIy5cawUvagdp5eCBPVHrPJ2U0eaUUKtjFg==}
+  aws-cdk-lib@2.232.0:
+    resolution: {integrity: sha512-EMk3SRMNio/nnKC3QIn1GQlimdp2aXw0LUgwUwiWPg3r7ACPUy9PrsWdWu+3sAx16pT9Eswckf8fb1ykXSc5Mg==}
     engines: {node: '>= 18.0.0'}
     peerDependencies:
       constructs: ^10.0.0
@@ -2317,7 +2317,7 @@ snapshots:
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.0': {}
 
-  '@aws-cdk/cloud-assembly-schema@48.18.0': {}
+  '@aws-cdk/cloud-assembly-schema@48.20.0': {}
 
   '@babel/code-frame@7.27.1':
     dependencies:
@@ -2605,9 +2605,9 @@ snapshots:
     dependencies:
       ajv: 8.17.1
 
-  '@mrgrain/cdk-esbuild@5.7.5(aws-cdk-lib@2.231.0(constructs@10.4.3))(constructs@10.4.3)':
+  '@mrgrain/cdk-esbuild@5.7.5(aws-cdk-lib@2.232.0(constructs@10.4.3))(constructs@10.4.3)':
     dependencies:
-      aws-cdk-lib: 2.231.0(constructs@10.4.3)
+      aws-cdk-lib: 2.232.0(constructs@10.4.3)
       constructs: 10.4.3
     optionalDependencies:
       esbuild: 0.25.12
@@ -2846,11 +2846,11 @@ snapshots:
   asynckit@0.4.0:
     optional: true
 
-  aws-cdk-lib@2.231.0(constructs@10.4.3):
+  aws-cdk-lib@2.232.0(constructs@10.4.3):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.242
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.0
-      '@aws-cdk/cloud-assembly-schema': 48.18.0
+      '@aws-cdk/cloud-assembly-schema': 48.20.0
       constructs: 10.4.3
 
   balanced-match@1.0.2: {}
