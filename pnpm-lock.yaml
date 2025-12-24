@@ -25,8 +25,8 @@ importers:
         specifier: ^2
         version: 2.3.10
       '@nikovirtala/projen-vitest':
-        specifier: ^2.1.32
-        version: 2.1.32(constructs@10.4.4)(projen@0.98.30(constructs@10.4.4))
+        specifier: ^2.1.33
+        version: 2.1.33(constructs@10.4.4)(projen@0.98.30(constructs@10.4.4))
       '@types/glob':
         specifier: ^8.1.0
         version: 8.1.0
@@ -59,7 +59,7 @@ importers:
         version: 1.122.0
       jsii-docgen:
         specifier: ^10.5.0
-        version: 10.11.8(jsii-rosetta@5.9.23)
+        version: 10.11.9(jsii-rosetta@5.9.23)
       jsii-pacmak:
         specifier: ^1.122.0
         version: 1.122.0(jsii-rosetta@5.9.23)
@@ -568,8 +568,8 @@ packages:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.0.5
 
-  '@nikovirtala/projen-vitest@2.1.32':
-    resolution: {integrity: sha512-KiIHYv1DYKhttIaqUy42YpRVFW73Qx5l5lGHgwDsInwi5rl0YNRTNrhD2+48yf87PBX6gI9+QvBlYKAyNdtrxA==}
+  '@nikovirtala/projen-vitest@2.1.33':
+    resolution: {integrity: sha512-2VRxaGsgKBrkadA1WsVTO4TLLLtmLd9dGXYevRXQJY95D+APcIK15TTBbVSI2zF2JTrpo2GX8PRD2r3+PoqiAg==}
     engines: {node: '>= 22.21.1'}
     peerDependencies:
       constructs: ^10.4.4
@@ -1471,8 +1471,8 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-docgen@10.11.8:
-    resolution: {integrity: sha512-/9uYvrggMOBb+B5pbuj41ittUmtVp9n42/7NoJuEOhQuS9gnFWFuV6nGsB0zgDSivb4Nm4YmkhqfIKtk+KMQsQ==}
+  jsii-docgen@10.11.9:
+    resolution: {integrity: sha512-x+oneYOQVV04E1F6vBGxgZmhiyXQ3WkYsX9XHQy1GvJaA3vfOhfVjM7uVzwpoBvrv6Dhv+hNHrzwxMlfie981w==}
     hasBin: true
     peerDependencies:
       jsii-rosetta: ^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1
@@ -2612,7 +2612,7 @@ snapshots:
     optionalDependencies:
       esbuild: 0.25.12
 
-  '@nikovirtala/projen-vitest@2.1.32(constructs@10.4.4)(projen@0.98.30(constructs@10.4.4))':
+  '@nikovirtala/projen-vitest@2.1.33(constructs@10.4.4)(projen@0.98.30(constructs@10.4.4))':
     dependencies:
       constructs: 10.4.4
       projen: 0.98.30(constructs@10.4.4)
@@ -3570,7 +3570,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@10.11.8(jsii-rosetta@5.9.23):
+  jsii-docgen@10.11.9(jsii-rosetta@5.9.23):
     dependencies:
       '@jsii/spec': 1.122.0
       case: 1.6.3
