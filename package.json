@@ -53,7 +53,7 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.125.0",
     "jsii-rosetta": "~5.9.3",
-    "projen": "^0.98.33",
+    "projen": "^0.98.34",
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "5.9.3",
@@ -62,15 +62,15 @@
   },
   "peerDependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.7",
-    "aws-cdk-lib": "^2.233.0",
+    "aws-cdk-lib": "^2.234.0",
     "constructs": "^10.4.4",
-    "projen": "^0.98.33"
+    "projen": "^0.98.34"
   },
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.7",
-    "aws-cdk-lib": "^2.233.0",
+    "aws-cdk-lib": "^2.234.0",
     "constructs": "^10.4.4",
-    "projen": "^0.98.33"
+    "projen": "^0.98.34"
   },
   "pnpm": {},
   "main": "lib/index.js",
