@@ -62,13 +62,13 @@
   },
   "peerDependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.8",
-    "aws-cdk-lib": "^2.235.0",
+    "aws-cdk-lib": "^2.235.1",
     "constructs": "^10.4.5",
     "projen": "^0.98.34"
   },
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.8",
-    "aws-cdk-lib": "^2.235.0",
+    "aws-cdk-lib": "^2.235.1",
     "constructs": "^10.4.5",
     "projen": "^0.98.34"
   },
