@@ -46,7 +46,7 @@
     "change-case": "^5.4.4",
     "commit-and-tag-version": "^12",
     "constructs": "^10.4.5",
-    "esbuild": "^0.27.2",
+    "esbuild": "^0.27.3",
     "glob": "^10.5.0",
     "jsii": "~5.9.3",
     "jsii-diff": "^1.126.0",
