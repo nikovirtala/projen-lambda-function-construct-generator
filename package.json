@@ -49,11 +49,11 @@
     "esbuild": "^0.27.3",
     "glob": "^10.5.0",
     "jsii": "~5.9.3",
-    "jsii-diff": "^1.126.0",
+    "jsii-diff": "^1.127.0",
     "jsii-docgen": "^10.5.0",
-    "jsii-pacmak": "^1.126.0",
+    "jsii-pacmak": "^1.127.0",
     "jsii-rosetta": "~5.9.3",
-    "projen": "^0.99.16",
+    "projen": "^0.99.17",
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "5.9.3",
@@ -64,13 +64,13 @@
     "@mrgrain/cdk-esbuild": "^5.7.11",
     "aws-cdk-lib": "^2.240.0",
     "constructs": "^10.5.1",
-    "projen": "^0.99.16"
+    "projen": "^0.99.17"
   },
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.11",
     "aws-cdk-lib": "^2.240.0",
     "constructs": "^10.5.1",
-    "projen": "^0.99.16"
+    "projen": "^0.99.17"
   },
   "pnpm": {},
   "main": "lib/index.js",
