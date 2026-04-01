@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@mrgrain/cdk-esbuild':
         specifier: ^5.7.11
-        version: 5.7.11(aws-cdk-lib@2.245.0(constructs@10.6.0))(constructs@10.6.0)
+        version: 5.7.11(aws-cdk-lib@2.246.0(constructs@10.6.0))(constructs@10.6.0)
       aws-cdk-lib:
-        specifier: ^2.245.0
-        version: 2.245.0(constructs@10.6.0)
+        specifier: ^2.246.0
+        version: 2.246.0(constructs@10.6.0)
       constructs:
         specifier: ^10.6.0
         version: 10.6.0
@@ -873,8 +873,8 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  aws-cdk-lib@2.245.0:
-    resolution: {integrity: sha512-Yfeb+wKC6s+Ttm/N93C6vY6ksyCh68WaG/j3N6dalJWTW/V4o6hUolHm+v2c2IofJEUS45c5AF/EEj24e9hfMA==}
+  aws-cdk-lib@2.246.0:
+    resolution: {integrity: sha512-7OtF95mss9dWohopCNQKAlNFrMJwgOIvNTNgoOWWcKhULBf6UxKCaf6ATlnuysIWRGf2DHgcval/4+yySOKRBw==}
     engines: {node: '>= 20.0.0'}
     peerDependencies:
       constructs: ^10.5.0
@@ -2625,9 +2625,9 @@ snapshots:
 
   '@jsii/spec@1.127.0': {}
 
-  '@mrgrain/cdk-esbuild@5.7.11(aws-cdk-lib@2.245.0(constructs@10.6.0))(constructs@10.6.0)':
+  '@mrgrain/cdk-esbuild@5.7.11(aws-cdk-lib@2.246.0(constructs@10.6.0))(constructs@10.6.0)':
     dependencies:
-      aws-cdk-lib: 2.245.0(constructs@10.6.0)
+      aws-cdk-lib: 2.246.0(constructs@10.6.0)
       constructs: 10.6.0
     optionalDependencies:
       esbuild: 0.25.12
@@ -2871,7 +2871,7 @@ snapshots:
   asynckit@0.4.0:
     optional: true
 
-  aws-cdk-lib@2.245.0(constructs@10.6.0):
+  aws-cdk-lib@2.246.0(constructs@10.6.0):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.263
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.1
