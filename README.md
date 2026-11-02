@@ -1,5 +1,16 @@
 # projen-lambda-function-construct-generator
 
+> [!WARNING]
+> **This package is deprecated** and won't get new features or fixes. Use [`@nikovirtala/projen-constructs`](https://github.com/nikovirtala/projen-constructs) instead.
+>
+> Replace the dev dependency `@nikovirtala/projen-lambda-function-construct-generator` with `@nikovirtala/projen-constructs`, then change the import:
+>
+> ```typescript
+> import { LambdaFunctionConstructGenerator } from "@nikovirtala/projen-constructs";
+> ```
+>
+> See the [migration guide](https://github.com/nikovirtala/projen-constructs#migrating-from-the-standalone-packages) for the steps and the differences to expect.
+
 A [projen](https://github.com/projen/projen) component to generate AWS CDK Lambda Function constructs and bundle their code assets using [esbuild](https://esbuild.github.io/).
 
 ## Features
